@@ -101,7 +101,7 @@ const changeitem = itemindex => {
     itemArray[itemindex]= isCross ? 'cross':'circle' ;
     setIsCross(!isCross);
   }else{
-    return toast.error("Lorem ipsum dolor", {
+    return toast.error("Already Done", {
       theme: "colored"
     })
     ;
@@ -115,24 +115,23 @@ const changeitem = itemindex => {
 
   return (
     <>
-     <Container className='p-5'>
-     <ToastContainer position="top-center" />
-   <div className='grid'>
-     {
-       itemArray.map(( item, index) => 
-         <Card color='danger' onClick={() =>changeitem(index)}>
-           <CardBody className='box'>
-            <Icon name= {item} />
-           </CardBody>
-         </Card>
-       )
-     }
-   </div>
- 
-   <Button color="success"  block onClick={reloadGame}>Reload the game
-   </Button>
-      
-     
+     <Container className='p-5 col-3 ' >
+         <ToastContainer position="top-center" />
+    
+          <div className='grid'>
+                        {
+                          itemArray.map(( item, index) => 
+                            <Card color='danger' onClick={() =>changeitem(index)}>
+                              <CardBody className='box'>
+                                <Icon name= {item} />
+                              </CardBody>
+                            </Card>
+                          )
+                        }
+            </div>
+          
+          <Button color="success"  block onClick={reloadGame}>Reload the game</Button>
+            
      </Container>
 
     </>
